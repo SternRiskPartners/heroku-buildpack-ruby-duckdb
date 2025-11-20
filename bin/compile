@@ -17,7 +17,7 @@ indent() {
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
-LP_DIR=$(cd $(dirname $0); cd ..; pwd)
+LP_DIR=$(cd "$(dirname "$0")" && cd .. && pwd)
 
 VENDOR_DIR="$BUILD_DIR/vendor"
 DUCKDB_VERSION="1.4.1"
@@ -106,8 +106,8 @@ ACTUAL_INSTALL_PATH="$HOME/vendor/duckdb"
 mkdir -p "$ACTUAL_INSTALL_PATH/lib"
 mkdir -p "$ACTUAL_INSTALL_PATH/include"
 
-cp -r "$DUCKDB_DIR/lib/"* "$ACTUAL_INSTALL_PATH/lib/"
-cp -r "$DUCKDB_DIR/include/"* "$ACTUAL_INSTALL_PATH/include/"
+cp -r "$DUCKDB_DIR/lib/." "$ACTUAL_INSTALL_PATH/lib/"
+cp -r "$DUCKDB_DIR/include/." "$ACTUAL_INSTALL_PATH/include/"
 
 # Verify installation
 if [ ! -f "$ACTUAL_INSTALL_PATH/lib/libduckdb.so" ]; then
