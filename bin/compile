@@ -20,12 +20,12 @@ ENV_DIR=$3
 LP_DIR=$(cd "$(dirname "$0")" && cd .. && pwd)
 
 VENDOR_DIR="$BUILD_DIR/vendor"
-DUCKDB_VERSION="1.4.1"
+DUCKDB_VERSION="1.3.1"
 CACHE_FILE="$CACHE_DIR/duckdb-$DUCKDB_VERSION.tar.gz"
 DUCKDB_DIR="$BUILD_DIR/vendor/duckdb"
 
 # Expected SHA256 (verify this from official DuckDB releases)
-EXPECTED_SHA256="ce859962fe96ca952d53571964dafa0168644283a76a2c669b3f73120d710edb"
+EXPECTED_SHA256="ac905cb0651c8601c34d0d7f635456a60764b3ff468f6c3ff2565fff9202ef3b"
 
 header "Installing DuckDB v$DUCKDB_VERSION"
 
